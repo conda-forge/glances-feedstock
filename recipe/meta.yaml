@@ -1,4 +1,4 @@
-{% set version = "3.1.4" %}
+{% set version = "3.1.5" %}
 
 package:
   name: glances
@@ -7,7 +7,7 @@ package:
 source:
   fn: Glances-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/G/Glances/Glances-{{ version }}.tar.gz
-  sha256: 98de0155649a7d847b67ef6f06875c5df54edfed30e2766fe743a5bbd73b8435
+  sha256: 00db2f3426e81bdf9428a56f5f54cd8866c3e6418c7b0c85374046ae044f3c74
 
 build:
   number: 0
