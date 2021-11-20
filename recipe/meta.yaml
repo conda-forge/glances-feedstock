@@ -26,6 +26,7 @@ requirements:
     - psutil >=5.3.0
     - defusedxml
     - future
+    - packaging
 
 test:
   requires:
