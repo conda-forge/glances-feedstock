@@ -27,6 +27,13 @@ requirements:
     - defusedxml
     - future
     - packaging
+    {% if noarch_platform == "win" %}
+    - __win
+    - bottle
+    - requests
+    {% else %}
+    - __unix
+    {% endif %}
 
 test:
   requires:
