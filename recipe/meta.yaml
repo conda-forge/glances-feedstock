@@ -27,7 +27,7 @@ requirements:
     - defusedxml
     - future
     - packaging
-    - ujson>=5.4.0
+    - ujson >=5.4.0
     {% if noarch_platform == "win" %}
     - __win
     - bottle
