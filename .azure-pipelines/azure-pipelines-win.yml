@@ -29,7 +29,7 @@ jobs:
           urllib.request.urlretrieve(url, path)
 
     - script: |
-        tree c:\ /f  prn 
+        tree c:\ /f /a
       displayName: Traverse directories on C:\
 
     - script: |
