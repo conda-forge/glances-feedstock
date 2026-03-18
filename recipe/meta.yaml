@@ -1,13 +1,13 @@
-{% set version = "3.4.0.5" %}
+{% set version = "4.5.2" %}
 
 package:
   name: glances
   version: {{ version }}
 
 source:
-  fn: Glances-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/G/Glances/Glances-{{ version }}.tar.gz
-  sha256: 2aaae0222744837e1223f63bd2efffbc6a3fdae42c95b2ebd1925cf94ae2a85b
+  fn: glances-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/g/glances/glances-{{ version }}.tar.gz
+  sha256: e150e100b328a419d5003a4d54c02a4d78b0a1f5782f0aa0816877ddbe5881e9
 
 build:
   number: 0
@@ -18,22 +18,17 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.10
     - pip
+    - setuptools
 
   run:
-    - python >=3.7
+    - python >=3.10
     - psutil >=5.6.7
     - defusedxml
     - packaging
-    - ujson >=5.4.0
-    {% if noarch_platform == "win" %}
-    - __win
-    - bottle
-    - requests
-    {% else %}
-    - __unix
-    {% endif %}
+    - jinja2
+    - pyinstrument >=5.1.2
 
 test:
   requires:
@@ -55,3 +50,4 @@ about:
 extra:
   recipe-maintainers:
     - jakirkham
+    - ConorForgie
