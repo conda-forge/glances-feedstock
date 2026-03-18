@@ -1,4 +1,5 @@
 {% set version = "4.5.2" %}
+{% set python_min = "3.10" %}
 
 package:
   name: glances
@@ -6,7 +7,7 @@ package:
 
 source:
   fn: glances-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/g/glances/glances-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/g/glances/glances-{{ version }}.tar.gz
   sha256: e150e100b328a419d5003a4d54c02a4d78b0a1f5782f0aa0816877ddbe5881e9
 
 build:
@@ -18,12 +19,12 @@ build:
 
 requirements:
   host:
-    - python >=3.10
+    - python {{ python_min }}
     - pip
     - setuptools
 
   run:
-    - python >=3.10
+    - python >={{ python_min }}
     - psutil >=5.6.7
     - defusedxml
     - packaging
@@ -33,6 +34,7 @@ requirements:
 test:
   requires:
     - pip
+    - python {{ python_min }}
 
   imports:
     - glances
