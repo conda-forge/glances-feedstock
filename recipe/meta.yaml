@@ -30,6 +30,7 @@ requirements:
     - packaging
     - jinja2
     - pyinstrument >=5.1.2
+    - shtab
 
 test:
   requires:
