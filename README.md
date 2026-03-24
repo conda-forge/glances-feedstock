@@ -1,5 +1,5 @@
-About glances-feedstock
-=======================
+About glances-suite-feedstock
+=============================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/glances-feedstock/blob/main/LICENSE.txt)
 
@@ -27,27 +27,29 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-glances-green.svg)](https://anaconda.org/conda-forge/glances) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/glances.svg)](https://anaconda.org/conda-forge/glances) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/glances.svg)](https://anaconda.org/conda-forge/glances) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/glances.svg)](https://anaconda.org/conda-forge/glances) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-glances--gpu-green.svg)](https://anaconda.org/conda-forge/glances-gpu) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/glances-gpu.svg)](https://anaconda.org/conda-forge/glances-gpu) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/glances-gpu.svg)](https://anaconda.org/conda-forge/glances-gpu) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/glances-gpu.svg)](https://anaconda.org/conda-forge/glances-gpu) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-glances--web-green.svg)](https://anaconda.org/conda-forge/glances-web) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/glances-web.svg)](https://anaconda.org/conda-forge/glances-web) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/glances-web.svg)](https://anaconda.org/conda-forge/glances-web) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/glances-web.svg)](https://anaconda.org/conda-forge/glances-web) |
 
-Installing glances
-==================
+Installing glances-suite
+========================
 
-Installing `glances` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `glances-suite` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `glances` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `glances, glances-gpu, glances-web` can be installed with `conda`:
 
 ```
-conda install glances
+conda install glances glances-gpu glances-web
 ```
 
 or with `mamba`:
 
 ```
-mamba install glances
+mamba install glances glances-gpu glances-web
 ```
 
 It is possible to list all of the versions of `glances` available on your platform with `conda`:
@@ -117,17 +119,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating glances-feedstock
-==========================
+Updating glances-suite-feedstock
+================================
 
-If you would like to improve the glances recipe or build a new
+If you would like to improve the glances-suite recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/glances-feedstock are
+Note that all branches in the conda-forge/glances-suite-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks, and branches in the main repository should only be used to
 build distinct package versions.
@@ -143,5 +145,6 @@ Feedstock Maintainers
 =====================
 
 * [@ConorForgie](https://github.com/ConorForgie/)
+* [@gabrielcnr](https://github.com/gabrielcnr/)
 * [@jakirkham](https://github.com/jakirkham/)
 
