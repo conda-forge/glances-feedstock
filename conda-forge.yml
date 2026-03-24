@@ -4,6 +4,5 @@ github:
   tooling_branch_name: main
 noarch_platforms:
 - linux_64
-- win_64
 conda_build:
   pkg_format: '2'
