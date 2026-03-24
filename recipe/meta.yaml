@@ -2,7 +2,7 @@
 {% set python_min = "3.10" %}
 
 package:
-  name: glances
+  name: glances-suite
   version: {{ version }}
 
 source:
@@ -12,37 +12,69 @@ source:
 
 build:
   number: 0
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  entry_points:
-    - glances = glances:main
 
-requirements:
-  host:
-    - python {{ python_min }}
-    - pip
-    - setuptools
+outputs:
+  - name: glances
+    build:
+      noarch: python
+      script: {{ PYTHON }} -m pip install . -vv --no-deps
+      entry_points:
+        - glances = glances:main
+    requirements:
+      host:
+        - python {{ python_min }}
+        - pip
+        - setuptools
+      run:
+        - python >={{ python_min }}
+        - psutil >=5.6.7
+        - defusedxml
+        - packaging
+        - jinja2
+        - pyinstrument >=5.1.2
+        - shtab
+    test:
+      requires:
+        - pip
+        - python {{ python_min }}
+      imports:
+        - glances
+      commands:
+        - pip check
+        - glances --help
 
-  run:
-    - python >={{ python_min }}
-    - psutil >=5.6.7
-    - defusedxml
-    - packaging
-    - jinja2
-    - pyinstrument >=5.1.2
-    - shtab
+  - name: glances-web
+    build:
+      noarch: generic
+    requirements:
+      run:
+        - {{ pin_subpackage('glances', exact=True) }}
+        - fastapi >=0.82.0
+        - python-jose >=3.3.0
+        - requests
+        - uvicorn
+    test:
+      requires:
+        - python {{ python_min }}
+      imports:
+        - glances
+      commands:
+        - python -c "import fastapi; import jose; import uvicorn"
 
-test:
-  requires:
-    - pip
-    - python {{ python_min }}
-
-  imports:
-    - glances
-
-  commands:
-    - pip check
-    - glances --help
+  - name: glances-gpu
+    build:
+      noarch: generic
+    requirements:
+      run:
+        - {{ pin_subpackage('glances', exact=True) }}
+        - nvidia-ml-py
+    test:
+      requires:
+        - python {{ python_min }}
+      imports:
+        - glances
+      commands:
+        - python -c "import pynvml"
 
 about:
   home: https://github.com/nicolargo/glances
