@@ -17,7 +17,7 @@ outputs:
   - name: glances
     build:
       noarch: python
-      script: {{ PYTHON }} -m pip install . -vv --no-deps
+      script: python -m pip install . -vv --no-deps --no-build-isolation
       entry_points:
         - glances = glances:main
     requirements:
