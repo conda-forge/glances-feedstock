@@ -1,4 +1,4 @@
-{% set version = "4.5.5" %}
+{% set version = "4.5.6" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 source:
   fn: glances-{{ version }}.tar.gz
   url: https://pypi.org/packages/source/g/glances/glances-{{ version }}.tar.gz
-  sha256: 2620a5b412611fadccde7517410aa878fede4e1297ab9c113280bc8f0a55985b
+  sha256: 8a26329f0a25e878d53c2558f1eb0615b09acc1dce2ba523cab32dbe175fe8bf
 
 build:
   number: 0
